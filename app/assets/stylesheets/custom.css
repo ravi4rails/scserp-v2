@@ -1,4 +1,4 @@
-.dropdown-menu > li.kopie > a {
+/*.dropdown-menu > li.kopie > a {
   padding-left:5px;
 }
 .dropdown-submenu {
@@ -77,4 +77,11 @@
   #navbar {
     text-align: center;
   }
+}*/
+.navbar-inverse{
+  background-color: #292c2f;
 }
+.dropdown-menu li a:hover {
+    background-color:#286090;
+    color:#fff;
+  }

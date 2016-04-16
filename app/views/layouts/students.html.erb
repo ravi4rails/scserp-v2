@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ScssrpV2</title>
+  <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "student" %>
+  <%= javascript_include_tag "student"%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render "layouts/student_header"%>
+<%= yield %>
+</body>
+</html>

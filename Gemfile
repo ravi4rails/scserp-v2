@@ -48,3 +48,4 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 gem 'jquery-ui-rails'
 gem "font-awesome-rails"
+gem 'owlcarousel-rails'

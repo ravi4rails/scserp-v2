@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :employees
     resources :students
     resources :news
+    resources :departments
+    resources :courses
+    resources :subjects
   end
 
   namespace :students do

@@ -5,12 +5,18 @@ Rails.application.routes.draw do
   get "home/index"
 
   namespace :admins do
+
+    # Admin Resources
     resources :employees
     resources :students
     resources :news
     resources :departments
     resources :courses
     resources :subjects
+    resources :semesters
+
+    # Admin Custom Actions
+    get '/admin_dashboard' => "dashboard#admin_dashboard"
   end
 
   namespace :students do

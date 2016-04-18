@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417101604) do
+ActiveRecord::Schema.define(version: 20160418161256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,25 @@ ActiveRecord::Schema.define(version: 20160417101604) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "semester_subjects", force: :cascade do |t|
+    t.integer  "semester_id"
+    t.integer  "subject_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "semester_subjects", ["semester_id"], name: "index_semester_subjects_on_semester_id", using: :btree
+  add_index "semester_subjects", ["subject_id"], name: "index_semester_subjects_on_subject_id", using: :btree
+
+  create_table "semesters", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "semesters", ["course_id"], name: "index_semesters_on_course_id", using: :btree
+
   create_table "students", force: :cascade do |t|
     t.string   "first_name"
     t.string   "middle_name"
@@ -119,4 +138,7 @@ ActiveRecord::Schema.define(version: 20160417101604) do
   add_foreign_key "course_subjects", "courses"
   add_foreign_key "course_subjects", "subjects"
   add_foreign_key "courses", "departments"
+  add_foreign_key "semester_subjects", "semesters"
+  add_foreign_key "semester_subjects", "subjects"
+  add_foreign_key "semesters", "courses"
 end
